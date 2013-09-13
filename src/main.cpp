@@ -75,16 +75,22 @@ int main ()
                   glm::vec3(0,1,0));
     P=glm::perspective(67.f,4.f/3.f,0.1f,1000.f);
 
-    CShader* mosaic=new CShader("shaders/phong.glsl");
-
-    quad.shader=mosaic;
-
     float zpos=0.1;
     float xpos=0.1;
+    float ypos=5.f;
 
     double fpstracker=glfwGetTime();
     int fps=0;
 
+    CMesh* mesh=new CMesh();
+
+    mesh->loadFromFile("feisar.ply");
+
+    uint32_t ftex=SOIL_load_OGL_texture("diffuse.bmp",SOIL_LOAD_AUTO, SOIL_CREATE_NEW_ID, SOIL_FLAG_MIPMAPS | SOIL_FLAG_INVERT_Y);
+    uint32_t stex=SOIL_load_OGL_texture("specular.bmp",SOIL_LOAD_AUTO, SOIL_CREATE_NEW_ID, SOIL_FLAG_MIPMAPS | SOIL_FLAG_INVERT_Y);
+
+    CMesh* sphere=new CMesh();
+    sphere->loadFromFile("sphere.ply");
     while (!glfwWindowShouldClose (window) && !glfwGetKey(window,GLFW_KEY_ESCAPE)==GL_TRUE)
     {
         static double previous_seconds = glfwGetTime ();
@@ -112,9 +118,21 @@ int main ()
             zpos-=1.f*elapsed_seconds;
             xpos+=1.f*elapsed_seconds;
         }
+        else if(glfwGetKey(window,GLFW_KEY_LEFT_SHIFT)==GLFW_PRESS)
+        {
+            ypos-=1.f*elapsed_seconds;
+        }
+        else if(glfwGetKey(window,GLFW_KEY_SPACE)==GLFW_PRESS)
+        {
+            ypos+=1.f*elapsed_seconds;
+        }
+        else if(glfwGetKey(window,GLFW_KEY_R)==GLFW_PRESS)
+        {
+            ypos=5.f;
+        }
 
-        V=glm::lookAt(glm::vec3(xpos,5,zpos),
-                  glm::vec3(xpos-0.5,0,zpos-0.5),
+        V=glm::lookAt(glm::vec3(xpos,ypos,zpos),
+                  glm::vec3(xpos-0.5,1,zpos-0.5),
                   glm::vec3(0,1,0));
         glActiveTexture(GL_TEXTURE0);
         glBindTexture(GL_TEXTURE_2D,tex2d);
@@ -133,6 +151,26 @@ int main ()
                 quad.shader->setUniformMat4("P",P);
                 quad.draw();
             }
+        M=glm::mat4(1.0f);
+        quad.shader->setUniformMat4("M",M);
+        quad.shader->setUniformMat4("V",V);
+        quad.shader->setUniformMat4("P",P);
+        glActiveTexture(GL_TEXTURE0);
+        glBindTexture(GL_TEXTURE_2D,ftex);
+        glActiveTexture(GL_TEXTURE1);
+        glBindTexture(GL_TEXTURE_2D,stex);
+        mesh->draw(quad.shader->id);
+
+        M=glm::mat4(1.0f);
+        M=glm::translate(M,glm::vec3(0,1,0));
+        quad.shader->setUniformMat4("M",M);
+        quad.shader->setUniformMat4("V",V);
+        quad.shader->setUniformMat4("P",P);
+        glActiveTexture(GL_TEXTURE0);
+        glBindTexture(GL_TEXTURE_2D,0);
+        glActiveTexture(GL_TEXTURE1);
+        glBindTexture(GL_TEXTURE_2D,0);
+        sphere->draw(quad.shader->id);
         // put the stuff we've been drawing onto the display
         glfwSwapBuffers (window);
         fps++;

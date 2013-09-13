@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1379081437 source:c:\users\andrew\desktop\stuff\coding\dragonrush\src\main.cpp
+1379102644 source:c:\users\andrew\desktop\stuff\coding\dragonrush\src\main.cpp
 	"CShader.h"
 	"CQuad.h"
 	<SOIL.h>
@@ -293,12 +293,14 @@
 	<ext.hpp>
 	"util.h"
 
-1378910307 source:c:\users\andrew\desktop\stuff\coding\dragonrush\src\cmesh.cpp
+1379096924 source:c:\users\andrew\desktop\stuff\coding\dragonrush\src\cmesh.cpp
 	"CMesh.h"
+	<fstream>
+	<sstream>
 
-1379024112 c:\users\andrew\desktop\stuff\coding\dragonrush\include\cmesh.h
+1379087100 c:\users\andrew\desktop\stuff\coding\dragonrush\include\cmesh.h
 
-1379014339 c:\users\andrew\desktop\stuff\coding\dragonrush\include\cquad.h
+1379098662 c:\users\andrew\desktop\stuff\coding\dragonrush\include\cquad.h
 	"CMesh.h"
 
 1378917696 c:\users\andrew\desktop\stuff\coding\dragonrush\include\util.h
