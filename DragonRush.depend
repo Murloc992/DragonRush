@@ -1,8 +1,8 @@
 # depslib dependency file v1.0
-1377522970 source:c:\users\andrew\desktop\stuff\coding\dragonrush\src\main.cpp
-	<GL/glew.h>
-	<GLFW/glfw3.h>
-	<stdio.h>
+1379081437 source:c:\users\andrew\desktop\stuff\coding\dragonrush\src\main.cpp
+	"CShader.h"
+	"CQuad.h"
+	<SOIL.h>
 
 1371414845 c:\users\andrew\desktop\stuff\coding\c++ libs\glfw-3.0.1.bin.win32\include\glfw\glfw3.h
 	<stddef.h>
@@ -27,7 +27,7 @@
 1377697166 source:c:\users\andrew\desktop\stuff\coding\dragonrush\src\ccube.cpp
 	"CCube.h"
 
-1377697686 c:\users\andrew\desktop\stuff\coding\dragonrush\include\ccube.h
+1377714951 c:\users\andrew\desktop\stuff\coding\dragonrush\include\ccube.h
 	<vector>
 	<glm.hpp>
 
@@ -263,4 +263,614 @@
 	"func_noise.inl"
 
 1376341255 c:\users\andrew\desktop\stuff\coding\c++ libs\glm-0.9.4.5\glm\core\func_noise.inl
+
+1379076935 source:c:\users\andrew\desktop\stuff\coding\dragonrush\src\cshader.cpp
+	<fstream>
+	"CShader.h"
+
+1378929125 c:\users\andrew\desktop\stuff\coding\dragonrush\include\cshader.h
+	<string>
+
+1378909935 source:c:\users\andrew\desktop\stuff\coding\dragonrush\src\precomp.cpp
+
+1378909721 c:\users\andrew\desktop\stuff\coding\dragonrush\include\precomp.h
+	<stdio.h>
+	<string>
+	<vector>
+	<cstdint>
+	<GL/glew.h>
+	<GLFW/glfw3.h>
+	<glm.hpp>
+
+1379030114 source:c:\users\andrew\desktop\stuff\coding\dragonrush\include\precomp.h
+	<stdio.h>
+	<string>
+	<vector>
+	<cstdint>
+	<GL/glew.h>
+	<GLFW/glfw3.h>
+	<glm.hpp>
+	<ext.hpp>
+	"util.h"
+
+1378910307 source:c:\users\andrew\desktop\stuff\coding\dragonrush\src\cmesh.cpp
+	"CMesh.h"
+
+1379024112 c:\users\andrew\desktop\stuff\coding\dragonrush\include\cmesh.h
+
+1379014339 c:\users\andrew\desktop\stuff\coding\dragonrush\include\cquad.h
+	"CMesh.h"
+
+1378917696 c:\users\andrew\desktop\stuff\coding\dragonrush\include\util.h
+
+1215443608 c:\users\andrew\desktop\stuff\coding\c++ libs\simple opengl image library\src\soil.h
+
+1376341255 c:\users\andrew\desktop\stuff\coding\c++ libs\glm-0.9.4.5\glm\gtc\matrix_transform.hpp
+	"../glm.hpp"
+	"matrix_transform.inl"
+
+1376341255 c:\users\andrew\desktop\stuff\coding\c++ libs\glm-0.9.4.5\glm\gtc\matrix_transform.inl
+
+1376341255 c:\users\andrew\desktop\stuff\coding\c++ libs\glm-0.9.4.5\glm\gtc\type_ptr.hpp
+	"../glm.hpp"
+	"../gtc/half_float.hpp"
+	"../gtc/quaternion.hpp"
+	<cstring>
+	"type_ptr.inl"
+
+1376341255 c:\users\andrew\desktop\stuff\coding\c++ libs\glm-0.9.4.5\glm\gtc\half_float.hpp
+	"../glm.hpp"
+	"half_float.inl"
+
+1376341255 c:\users\andrew\desktop\stuff\coding\c++ libs\glm-0.9.4.5\glm\gtc\half_float.inl
+
+1376341255 c:\users\andrew\desktop\stuff\coding\c++ libs\glm-0.9.4.5\glm\gtc\quaternion.hpp
+	"../glm.hpp"
+	"../gtc/half_float.hpp"
+	"../gtc/constants.hpp"
+	"quaternion.inl"
+
+1374835560 c:\users\andrew\desktop\stuff\coding\c++ libs\glm-0.9.4.5\glm\gtc\constants.hpp
+	"../glm.hpp"
+	"../gtc/half_float.hpp"
+	"constants.inl"
+
+1374835560 c:\users\andrew\desktop\stuff\coding\c++ libs\glm-0.9.4.5\glm\gtc\constants.inl
+
+1376341255 c:\users\andrew\desktop\stuff\coding\c++ libs\glm-0.9.4.5\glm\gtc\quaternion.inl
+	<limits>
+
+1376342329 c:\users\andrew\desktop\stuff\coding\c++ libs\glm-0.9.4.5\glm\gtc\type_ptr.inl
+
+1376341255 c:\users\andrew\desktop\stuff\coding\c++ libs\glm-0.9.4.5\glm\ext.hpp
+	"./gtc/constants.hpp"
+	"./gtc/epsilon.hpp"
+	"./gtc/half_float.hpp"
+	"./gtc/matrix_access.hpp"
+	"./gtc/matrix_integer.hpp"
+	"./gtc/matrix_inverse.hpp"
+	"./gtc/matrix_transform.hpp"
+	"./gtc/noise.hpp"
+	"./gtc/quaternion.hpp"
+	"./gtc/random.hpp"
+	"./gtc/reciprocal.hpp"
+	"./gtc/swizzle.hpp"
+	"./gtc/type_precision.hpp"
+	"./gtc/type_ptr.hpp"
+	"./gtc/ulp.hpp"
+	"./gtx/associated_min_max.hpp"
+	"./gtx/bit.hpp"
+	"./gtx/closest_point.hpp"
+	"./gtx/color_cast.hpp"
+	"./gtx/color_space.hpp"
+	"./gtx/color_space_YCoCg.hpp"
+	"./gtx/compatibility.hpp"
+	"./gtx/component_wise.hpp"
+	"./gtx/euler_angles.hpp"
+	"./gtx/extend.hpp"
+	"./gtx/extented_min_max.hpp"
+	"./gtx/fast_exponential.hpp"
+	"./gtx/fast_square_root.hpp"
+	"./gtx/fast_trigonometry.hpp"
+	"./gtx/gradient_paint.hpp"
+	"./gtx/handed_coordinate_space.hpp"
+	"./gtx/inertia.hpp"
+	"./gtx/int_10_10_10_2.hpp"
+	"./gtx/integer.hpp"
+	"./gtx/intersect.hpp"
+	"./gtx/log_base.hpp"
+	"./gtx/matrix_cross_product.hpp"
+	"./gtx/matrix_interpolation.hpp"
+	"./gtx/matrix_major_storage.hpp"
+	"./gtx/matrix_operation.hpp"
+	"./gtx/matrix_query.hpp"
+	"./gtx/mixed_product.hpp"
+	"./gtx/multiple.hpp"
+	"./gtx/norm.hpp"
+	"./gtx/normal.hpp"
+	"./gtx/normalize_dot.hpp"
+	"./gtx/number_precision.hpp"
+	"./gtx/ocl_type.hpp"
+	"./gtx/optimum_pow.hpp"
+	"./gtx/orthonormalize.hpp"
+	"./gtx/perpendicular.hpp"
+	"./gtx/polar_coordinates.hpp"
+	"./gtx/projection.hpp"
+	"./gtx/quaternion.hpp"
+	"./gtx/raw_data.hpp"
+	"./gtx/rotate_vector.hpp"
+	"./gtx/spline.hpp"
+	"./gtx/std_based_type.hpp"
+	"./gtx/string_cast.hpp"
+	"./gtx/transform.hpp"
+	"./gtx/transform2.hpp"
+	"./gtx/vec1.hpp"
+	"./gtx/vector_access.hpp"
+	"./gtx/vector_angle.hpp"
+	"./gtx/vector_query.hpp"
+	"./gtx/verbose_operator.hpp"
+	"./gtx/wrap.hpp"
+	"./gtx/simd_vec4.hpp"
+	"./gtx/simd_mat4.hpp"
+	"./virtrev/xstream.hpp"
+
+1376341255 c:\users\andrew\desktop\stuff\coding\c++ libs\glm-0.9.4.5\glm\gtc\epsilon.hpp
+	"../glm.hpp"
+	"../gtc/half_float.hpp"
+	"../gtc/quaternion.hpp"
+	"epsilon.inl"
+
+1376341255 c:\users\andrew\desktop\stuff\coding\c++ libs\glm-0.9.4.5\glm\gtc\epsilon.inl
+
+1376341255 c:\users\andrew\desktop\stuff\coding\c++ libs\glm-0.9.4.5\glm\gtc\matrix_access.hpp
+	"../glm.hpp"
+	"matrix_access.inl"
+
+1376341255 c:\users\andrew\desktop\stuff\coding\c++ libs\glm-0.9.4.5\glm\gtc\matrix_access.inl
+
+1376341255 c:\users\andrew\desktop\stuff\coding\c++ libs\glm-0.9.4.5\glm\gtc\matrix_integer.hpp
+	"../glm.hpp"
+
+1374835560 c:\users\andrew\desktop\stuff\coding\c++ libs\glm-0.9.4.5\glm\gtc\matrix_inverse.hpp
+	"../glm.hpp"
+	"matrix_inverse.inl"
+
+1376341255 c:\users\andrew\desktop\stuff\coding\c++ libs\glm-0.9.4.5\glm\gtc\matrix_inverse.inl
+
+1376341255 c:\users\andrew\desktop\stuff\coding\c++ libs\glm-0.9.4.5\glm\gtc\noise.hpp
+	"../glm.hpp"
+	"noise.inl"
+
+1376341255 c:\users\andrew\desktop\stuff\coding\c++ libs\glm-0.9.4.5\glm\gtc\noise.inl
+
+1376341255 c:\users\andrew\desktop\stuff\coding\c++ libs\glm-0.9.4.5\glm\gtc\random.hpp
+	"../glm.hpp"
+	"../gtc/half_float.hpp"
+	"random.inl"
+
+1376341255 c:\users\andrew\desktop\stuff\coding\c++ libs\glm-0.9.4.5\glm\gtc\random.inl
+	<ctime>
+	<cassert>
+
+1374835560 c:\users\andrew\desktop\stuff\coding\c++ libs\glm-0.9.4.5\glm\gtc\reciprocal.hpp
+	"../glm.hpp"
+	"reciprocal.inl"
+
+1374835560 c:\users\andrew\desktop\stuff\coding\c++ libs\glm-0.9.4.5\glm\gtc\reciprocal.inl
+
+1376341255 c:\users\andrew\desktop\stuff\coding\c++ libs\glm-0.9.4.5\glm\gtc\swizzle.hpp
+	"../glm.hpp"
+	"../gtc/type_precision.hpp"
+	"swizzle.inl"
+
+1376341255 c:\users\andrew\desktop\stuff\coding\c++ libs\glm-0.9.4.5\glm\gtc\type_precision.hpp
+	"../glm.hpp"
+	"../gtc/half_float.hpp"
+	"../gtc/quaternion.hpp"
+	"type_precision.inl"
+
+1374835560 c:\users\andrew\desktop\stuff\coding\c++ libs\glm-0.9.4.5\glm\gtc\type_precision.inl
+
+1376341255 c:\users\andrew\desktop\stuff\coding\c++ libs\glm-0.9.4.5\glm\gtc\swizzle.inl
+
+1376341255 c:\users\andrew\desktop\stuff\coding\c++ libs\glm-0.9.4.5\glm\gtc\ulp.hpp
+	"../glm.hpp"
+	"ulp.inl"
+
+1376341255 c:\users\andrew\desktop\stuff\coding\c++ libs\glm-0.9.4.5\glm\gtc\ulp.inl
+	<cmath>
+	<cfloat>
+
+1374835560 c:\users\andrew\desktop\stuff\coding\c++ libs\glm-0.9.4.5\glm\gtx\associated_min_max.hpp
+	"../glm.hpp"
+	"associated_min_max.inl"
+
+1376341255 c:\users\andrew\desktop\stuff\coding\c++ libs\glm-0.9.4.5\glm\gtx\associated_min_max.inl
+
+1376341255 c:\users\andrew\desktop\stuff\coding\c++ libs\glm-0.9.4.5\glm\gtx\bit.hpp
+	"../glm.hpp"
+	"../gtc/half_float.hpp"
+	"bit.inl"
+
+1376341255 c:\users\andrew\desktop\stuff\coding\c++ libs\glm-0.9.4.5\glm\gtx\bit.inl
+
+1376341255 c:\users\andrew\desktop\stuff\coding\c++ libs\glm-0.9.4.5\glm\gtx\closest_point.hpp
+	"../glm.hpp"
+	"closest_point.inl"
+
+1374835560 c:\users\andrew\desktop\stuff\coding\c++ libs\glm-0.9.4.5\glm\gtx\closest_point.inl
+
+1376341255 c:\users\andrew\desktop\stuff\coding\c++ libs\glm-0.9.4.5\glm\gtx\color_cast.hpp
+	"../glm.hpp"
+	"../gtx/number_precision.hpp"
+	"color_cast.inl"
+
+1374835560 c:\users\andrew\desktop\stuff\coding\c++ libs\glm-0.9.4.5\glm\gtx\number_precision.hpp
+	"../glm.hpp"
+	"../gtc/type_precision.hpp"
+	"number_precision.inl"
+
+1374835560 c:\users\andrew\desktop\stuff\coding\c++ libs\glm-0.9.4.5\glm\gtx\number_precision.inl
+
+1376341255 c:\users\andrew\desktop\stuff\coding\c++ libs\glm-0.9.4.5\glm\gtx\color_cast.inl
+
+1376341255 c:\users\andrew\desktop\stuff\coding\c++ libs\glm-0.9.4.5\glm\gtx\color_space.hpp
+	"../glm.hpp"
+	"color_space.inl"
+
+1376341255 c:\users\andrew\desktop\stuff\coding\c++ libs\glm-0.9.4.5\glm\gtx\color_space.inl
+
+1376341255 c:\users\andrew\desktop\stuff\coding\c++ libs\glm-0.9.4.5\glm\gtx\color_space_ycocg.hpp
+	"../glm.hpp"
+	"color_space_YCoCg.inl"
+
+1374835560 c:\users\andrew\desktop\stuff\coding\c++ libs\glm-0.9.4.5\glm\gtx\color_space_ycocg.inl
+
+1376341255 c:\users\andrew\desktop\stuff\coding\c++ libs\glm-0.9.4.5\glm\gtx\compatibility.hpp
+	"../glm.hpp"
+	"../gtc/half_float.hpp"
+	"../gtc/quaternion.hpp"
+	<cfloat>
+	<cmath>
+	"compatibility.inl"
+
+1374835560 c:\users\andrew\desktop\stuff\coding\c++ libs\glm-0.9.4.5\glm\gtx\compatibility.inl
+
+1374835560 c:\users\andrew\desktop\stuff\coding\c++ libs\glm-0.9.4.5\glm\gtx\component_wise.hpp
+	"../glm.hpp"
+	"component_wise.inl"
+
+1374835560 c:\users\andrew\desktop\stuff\coding\c++ libs\glm-0.9.4.5\glm\gtx\component_wise.inl
+
+1376341255 c:\users\andrew\desktop\stuff\coding\c++ libs\glm-0.9.4.5\glm\gtx\euler_angles.hpp
+	"../glm.hpp"
+	"../gtc/half_float.hpp"
+	"euler_angles.inl"
+
+1376341255 c:\users\andrew\desktop\stuff\coding\c++ libs\glm-0.9.4.5\glm\gtx\euler_angles.inl
+
+1374835560 c:\users\andrew\desktop\stuff\coding\c++ libs\glm-0.9.4.5\glm\gtx\extend.hpp
+	"../glm.hpp"
+	"extend.inl"
+
+1374835560 c:\users\andrew\desktop\stuff\coding\c++ libs\glm-0.9.4.5\glm\gtx\extend.inl
+
+1374835560 c:\users\andrew\desktop\stuff\coding\c++ libs\glm-0.9.4.5\glm\gtx\extented_min_max.hpp
+	"../glm.hpp"
+	"../gtc/half_float.hpp"
+	"extented_min_max.inl"
+
+1374835560 c:\users\andrew\desktop\stuff\coding\c++ libs\glm-0.9.4.5\glm\gtx\extented_min_max.inl
+
+1374835560 c:\users\andrew\desktop\stuff\coding\c++ libs\glm-0.9.4.5\glm\gtx\fast_exponential.hpp
+	"../glm.hpp"
+	"../gtc/half_float.hpp"
+	"fast_exponential.inl"
+
+1376341255 c:\users\andrew\desktop\stuff\coding\c++ libs\glm-0.9.4.5\glm\gtx\fast_exponential.inl
+
+1374835560 c:\users\andrew\desktop\stuff\coding\c++ libs\glm-0.9.4.5\glm\gtx\fast_square_root.hpp
+	"../glm.hpp"
+	"fast_square_root.inl"
+
+1376341255 c:\users\andrew\desktop\stuff\coding\c++ libs\glm-0.9.4.5\glm\gtx\fast_square_root.inl
+
+1374835560 c:\users\andrew\desktop\stuff\coding\c++ libs\glm-0.9.4.5\glm\gtx\fast_trigonometry.hpp
+	"../glm.hpp"
+	"fast_trigonometry.inl"
+
+1374835560 c:\users\andrew\desktop\stuff\coding\c++ libs\glm-0.9.4.5\glm\gtx\fast_trigonometry.inl
+
+1376341255 c:\users\andrew\desktop\stuff\coding\c++ libs\glm-0.9.4.5\glm\gtx\gradient_paint.hpp
+	"../glm.hpp"
+	"../gtx/optimum_pow.hpp"
+	"gradient_paint.inl"
+
+1376341255 c:\users\andrew\desktop\stuff\coding\c++ libs\glm-0.9.4.5\glm\gtx\optimum_pow.hpp
+	"../glm.hpp"
+	"optimum_pow.inl"
+
+1376341255 c:\users\andrew\desktop\stuff\coding\c++ libs\glm-0.9.4.5\glm\gtx\optimum_pow.inl
+
+1376341255 c:\users\andrew\desktop\stuff\coding\c++ libs\glm-0.9.4.5\glm\gtx\gradient_paint.inl
+
+1376341255 c:\users\andrew\desktop\stuff\coding\c++ libs\glm-0.9.4.5\glm\gtx\handed_coordinate_space.hpp
+	"../glm.hpp"
+	"handed_coordinate_space.inl"
+
+1376341255 c:\users\andrew\desktop\stuff\coding\c++ libs\glm-0.9.4.5\glm\gtx\handed_coordinate_space.inl
+
+1376341255 c:\users\andrew\desktop\stuff\coding\c++ libs\glm-0.9.4.5\glm\gtx\inertia.hpp
+	"../glm.hpp"
+	"inertia.inl"
+
+1376341255 c:\users\andrew\desktop\stuff\coding\c++ libs\glm-0.9.4.5\glm\gtx\inertia.inl
+
+1374835560 c:\users\andrew\desktop\stuff\coding\c++ libs\glm-0.9.4.5\glm\gtx\int_10_10_10_2.hpp
+	"../glm.hpp"
+	"../gtx/raw_data.hpp"
+	"int_10_10_10_2.inl"
+
+1374835560 c:\users\andrew\desktop\stuff\coding\c++ libs\glm-0.9.4.5\glm\gtx\raw_data.hpp
+	"../glm.hpp"
+	"../gtc/type_precision.hpp"
+	"raw_data.inl"
+
+1374835560 c:\users\andrew\desktop\stuff\coding\c++ libs\glm-0.9.4.5\glm\gtx\raw_data.inl
+
+1374835560 c:\users\andrew\desktop\stuff\coding\c++ libs\glm-0.9.4.5\glm\gtx\int_10_10_10_2.inl
+
+1374835560 c:\users\andrew\desktop\stuff\coding\c++ libs\glm-0.9.4.5\glm\gtx\integer.hpp
+	"../glm.hpp"
+	"integer.inl"
+
+1376341255 c:\users\andrew\desktop\stuff\coding\c++ libs\glm-0.9.4.5\glm\gtx\integer.inl
+
+1374835560 c:\users\andrew\desktop\stuff\coding\c++ libs\glm-0.9.4.5\glm\gtx\intersect.hpp
+	"../glm.hpp"
+	"../gtx/closest_point.hpp"
+	"intersect.inl"
+
+1374835560 c:\users\andrew\desktop\stuff\coding\c++ libs\glm-0.9.4.5\glm\gtx\intersect.inl
+	<cfloat>
+	<limits>
+
+1374835560 c:\users\andrew\desktop\stuff\coding\c++ libs\glm-0.9.4.5\glm\gtx\log_base.hpp
+	"../glm.hpp"
+	"log_base.inl"
+
+1374835560 c:\users\andrew\desktop\stuff\coding\c++ libs\glm-0.9.4.5\glm\gtx\log_base.inl
+
+1376341255 c:\users\andrew\desktop\stuff\coding\c++ libs\glm-0.9.4.5\glm\gtx\matrix_cross_product.hpp
+	"../glm.hpp"
+	"matrix_cross_product.inl"
+
+1376341255 c:\users\andrew\desktop\stuff\coding\c++ libs\glm-0.9.4.5\glm\gtx\matrix_cross_product.inl
+
+1376341255 c:\users\andrew\desktop\stuff\coding\c++ libs\glm-0.9.4.5\glm\gtx\matrix_interpolation.hpp
+	"matrix_interpolation.inl"
+
+1376341255 c:\users\andrew\desktop\stuff\coding\c++ libs\glm-0.9.4.5\glm\gtx\matrix_interpolation.inl
+
+1376341255 c:\users\andrew\desktop\stuff\coding\c++ libs\glm-0.9.4.5\glm\gtx\matrix_major_storage.hpp
+	"../glm.hpp"
+	"matrix_major_storage.inl"
+
+1376341255 c:\users\andrew\desktop\stuff\coding\c++ libs\glm-0.9.4.5\glm\gtx\matrix_major_storage.inl
+
+1374835560 c:\users\andrew\desktop\stuff\coding\c++ libs\glm-0.9.4.5\glm\gtx\matrix_operation.hpp
+	"../glm.hpp"
+	"matrix_operation.inl"
+
+1374835560 c:\users\andrew\desktop\stuff\coding\c++ libs\glm-0.9.4.5\glm\gtx\matrix_operation.inl
+
+1376341255 c:\users\andrew\desktop\stuff\coding\c++ libs\glm-0.9.4.5\glm\gtx\matrix_query.hpp
+	"../glm.hpp"
+	"../gtx/vector_query.hpp"
+	<limits>
+	"matrix_query.inl"
+
+1376341255 c:\users\andrew\desktop\stuff\coding\c++ libs\glm-0.9.4.5\glm\gtx\vector_query.hpp
+	"../glm.hpp"
+	<cfloat>
+	<limits>
+	"vector_query.inl"
+
+1376341255 c:\users\andrew\desktop\stuff\coding\c++ libs\glm-0.9.4.5\glm\gtx\vector_query.inl
+	<cassert>
+
+1376341255 c:\users\andrew\desktop\stuff\coding\c++ libs\glm-0.9.4.5\glm\gtx\matrix_query.inl
+
+1374835560 c:\users\andrew\desktop\stuff\coding\c++ libs\glm-0.9.4.5\glm\gtx\mixed_product.hpp
+	"../glm.hpp"
+	"mixed_product.inl"
+
+1374835560 c:\users\andrew\desktop\stuff\coding\c++ libs\glm-0.9.4.5\glm\gtx\mixed_product.inl
+
+1376341255 c:\users\andrew\desktop\stuff\coding\c++ libs\glm-0.9.4.5\glm\gtx\multiple.hpp
+	"../glm.hpp"
+	"multiple.inl"
+
+1376341255 c:\users\andrew\desktop\stuff\coding\c++ libs\glm-0.9.4.5\glm\gtx\multiple.inl
+
+1376341255 c:\users\andrew\desktop\stuff\coding\c++ libs\glm-0.9.4.5\glm\gtx\norm.hpp
+	"../glm.hpp"
+	"../gtx/quaternion.hpp"
+	"norm.inl"
+
+1376341255 c:\users\andrew\desktop\stuff\coding\c++ libs\glm-0.9.4.5\glm\gtx\quaternion.hpp
+	"../glm.hpp"
+	"../gtc/quaternion.hpp"
+	"quaternion.inl"
+
+1376341255 c:\users\andrew\desktop\stuff\coding\c++ libs\glm-0.9.4.5\glm\gtx\quaternion.inl
+	<limits>
+
+1376341255 c:\users\andrew\desktop\stuff\coding\c++ libs\glm-0.9.4.5\glm\gtx\norm.inl
+
+1376341255 c:\users\andrew\desktop\stuff\coding\c++ libs\glm-0.9.4.5\glm\gtx\normal.hpp
+	"../glm.hpp"
+	"normal.inl"
+
+1376341255 c:\users\andrew\desktop\stuff\coding\c++ libs\glm-0.9.4.5\glm\gtx\normal.inl
+
+1374835560 c:\users\andrew\desktop\stuff\coding\c++ libs\glm-0.9.4.5\glm\gtx\normalize_dot.hpp
+	"../glm.hpp"
+	"../gtx/fast_square_root.hpp"
+	"normalize_dot.inl"
+
+1374835560 c:\users\andrew\desktop\stuff\coding\c++ libs\glm-0.9.4.5\glm\gtx\normalize_dot.inl
+
+1376341255 c:\users\andrew\desktop\stuff\coding\c++ libs\glm-0.9.4.5\glm\gtx\ocl_type.hpp
+	"../glm.hpp"
+	"ocl_type.inl"
+
+1376341255 c:\users\andrew\desktop\stuff\coding\c++ libs\glm-0.9.4.5\glm\gtx\ocl_type.inl
+
+1376341255 c:\users\andrew\desktop\stuff\coding\c++ libs\glm-0.9.4.5\glm\gtx\orthonormalize.hpp
+	"../glm.hpp"
+	"orthonormalize.inl"
+
+1376341255 c:\users\andrew\desktop\stuff\coding\c++ libs\glm-0.9.4.5\glm\gtx\orthonormalize.inl
+
+1374835560 c:\users\andrew\desktop\stuff\coding\c++ libs\glm-0.9.4.5\glm\gtx\perpendicular.hpp
+	"../glm.hpp"
+	"../gtx/projection.hpp"
+	"perpendicular.inl"
+
+1374835560 c:\users\andrew\desktop\stuff\coding\c++ libs\glm-0.9.4.5\glm\gtx\projection.hpp
+	"../glm.hpp"
+	"projection.inl"
+
+1374835560 c:\users\andrew\desktop\stuff\coding\c++ libs\glm-0.9.4.5\glm\gtx\projection.inl
+
+1374835560 c:\users\andrew\desktop\stuff\coding\c++ libs\glm-0.9.4.5\glm\gtx\perpendicular.inl
+
+1376341255 c:\users\andrew\desktop\stuff\coding\c++ libs\glm-0.9.4.5\glm\gtx\polar_coordinates.hpp
+	"../glm.hpp"
+	"polar_coordinates.inl"
+
+1376341255 c:\users\andrew\desktop\stuff\coding\c++ libs\glm-0.9.4.5\glm\gtx\polar_coordinates.inl
+
+1376341255 c:\users\andrew\desktop\stuff\coding\c++ libs\glm-0.9.4.5\glm\gtx\rotate_vector.hpp
+	"../glm.hpp"
+	"../gtx/transform.hpp"
+	"rotate_vector.inl"
+
+1376341255 c:\users\andrew\desktop\stuff\coding\c++ libs\glm-0.9.4.5\glm\gtx\transform.hpp
+	"../glm.hpp"
+	"../gtc/matrix_transform.hpp"
+	"transform.inl"
+
+1376341255 c:\users\andrew\desktop\stuff\coding\c++ libs\glm-0.9.4.5\glm\gtx\transform.inl
+
+1376341255 c:\users\andrew\desktop\stuff\coding\c++ libs\glm-0.9.4.5\glm\gtx\rotate_vector.inl
+
+1376341255 c:\users\andrew\desktop\stuff\coding\c++ libs\glm-0.9.4.5\glm\gtx\spline.hpp
+	"../glm.hpp"
+	"../gtx/optimum_pow.hpp"
+	"spline.inl"
+
+1374835560 c:\users\andrew\desktop\stuff\coding\c++ libs\glm-0.9.4.5\glm\gtx\spline.inl
+
+1374835560 c:\users\andrew\desktop\stuff\coding\c++ libs\glm-0.9.4.5\glm\gtx\std_based_type.hpp
+	"../glm.hpp"
+	<cstdlib>
+	"std_based_type.inl"
+
+1374835560 c:\users\andrew\desktop\stuff\coding\c++ libs\glm-0.9.4.5\glm\gtx\std_based_type.inl
+
+1376341255 c:\users\andrew\desktop\stuff\coding\c++ libs\glm-0.9.4.5\glm\gtx\string_cast.hpp
+	"../glm.hpp"
+	"../gtc/half_float.hpp"
+	"../gtx/integer.hpp"
+	"../gtx/quaternion.hpp"
+	<string>
+	"string_cast.inl"
+
+1376341255 c:\users\andrew\desktop\stuff\coding\c++ libs\glm-0.9.4.5\glm\gtx\string_cast.inl
+	<cstdarg>
+	<cstdio>
+
+1376341255 c:\users\andrew\desktop\stuff\coding\c++ libs\glm-0.9.4.5\glm\gtx\transform2.hpp
+	"../glm.hpp"
+	"../gtx/transform.hpp"
+	"transform2.inl"
+
+1376341255 c:\users\andrew\desktop\stuff\coding\c++ libs\glm-0.9.4.5\glm\gtx\transform2.inl
+
+1376341255 c:\users\andrew\desktop\stuff\coding\c++ libs\glm-0.9.4.5\glm\gtx\vec1.hpp
+	"../glm.hpp"
+	"../core/type_vec1.hpp"
+	"vec1.inl"
+
+1374835560 c:\users\andrew\desktop\stuff\coding\c++ libs\glm-0.9.4.5\glm\gtx\vec1.inl
+
+1376341255 c:\users\andrew\desktop\stuff\coding\c++ libs\glm-0.9.4.5\glm\gtx\vector_access.hpp
+	"../glm.hpp"
+	"vector_access.inl"
+
+1374835560 c:\users\andrew\desktop\stuff\coding\c++ libs\glm-0.9.4.5\glm\gtx\vector_access.inl
+
+1376341255 c:\users\andrew\desktop\stuff\coding\c++ libs\glm-0.9.4.5\glm\gtx\vector_angle.hpp
+	"../glm.hpp"
+	"../gtc/epsilon.hpp"
+	"../gtx/quaternion.hpp"
+	"../gtx/rotate_vector.hpp"
+	"vector_angle.inl"
+
+1376341255 c:\users\andrew\desktop\stuff\coding\c++ libs\glm-0.9.4.5\glm\gtx\vector_angle.inl
+
+1376341255 c:\users\andrew\desktop\stuff\coding\c++ libs\glm-0.9.4.5\glm\gtx\verbose_operator.hpp
+	"../glm.hpp"
+	"verbose_operator.inl"
+
+1376341255 c:\users\andrew\desktop\stuff\coding\c++ libs\glm-0.9.4.5\glm\gtx\verbose_operator.inl
+
+1376341255 c:\users\andrew\desktop\stuff\coding\c++ libs\glm-0.9.4.5\glm\gtx\wrap.hpp
+	"../glm.hpp"
+	"wrap.inl"
+
+1376341255 c:\users\andrew\desktop\stuff\coding\c++ libs\glm-0.9.4.5\glm\gtx\wrap.inl
+
+1376341255 c:\users\andrew\desktop\stuff\coding\c++ libs\glm-0.9.4.5\glm\gtx\simd_vec4.hpp
+	"../glm.hpp"
+	"../core/intrinsic_common.hpp"
+	"../core/intrinsic_geometric.hpp"
+	"simd_vec4.inl"
+
+1374835560 c:\users\andrew\desktop\stuff\coding\c++ libs\glm-0.9.4.5\glm\core\intrinsic_common.hpp
+	"setup.hpp"
+	"intrinsic_common.inl"
+
+1376341255 c:\users\andrew\desktop\stuff\coding\c++ libs\glm-0.9.4.5\glm\core\intrinsic_common.inl
+
+1374835560 c:\users\andrew\desktop\stuff\coding\c++ libs\glm-0.9.4.5\glm\core\intrinsic_geometric.hpp
+	"setup.hpp"
+	"intrinsic_common.hpp"
+	"intrinsic_geometric.inl"
+
+1374835560 c:\users\andrew\desktop\stuff\coding\c++ libs\glm-0.9.4.5\glm\core\intrinsic_geometric.inl
+
+1376341255 c:\users\andrew\desktop\stuff\coding\c++ libs\glm-0.9.4.5\glm\gtx\simd_vec4.inl
+
+1376341255 c:\users\andrew\desktop\stuff\coding\c++ libs\glm-0.9.4.5\glm\gtx\simd_mat4.hpp
+	"../glm.hpp"
+	"../core/intrinsic_matrix.hpp"
+	"../gtx/simd_vec4.hpp"
+	"simd_mat4.inl"
+
+1374835560 c:\users\andrew\desktop\stuff\coding\c++ libs\glm-0.9.4.5\glm\core\intrinsic_matrix.hpp
+	"setup.hpp"
+	"intrinsic_geometric.hpp"
+	"intrinsic_matrix.inl"
+
+1376341255 c:\users\andrew\desktop\stuff\coding\c++ libs\glm-0.9.4.5\glm\core\intrinsic_matrix.inl
+
+1376341255 c:\users\andrew\desktop\stuff\coding\c++ libs\glm-0.9.4.5\glm\gtx\simd_mat4.inl
+
+1376341255 c:\users\andrew\desktop\stuff\coding\c++ libs\glm-0.9.4.5\glm\virtrev\xstream.hpp
+	"../glm.hpp"
+	"../gtc/matrix_access.hpp"
+	<iostream>
 

@@ -23,13 +23,13 @@ void main () {
 
 layout (binding = 0) uniform sampler2D tex;
 
-uniform float timer;
-
 in vec4 color;
 in vec2 st;
 
 out vec4 frag_colour;
 
 void main () {
-    frag_colour = texture(tex,st+timer)*color;
+    float dp=1*(1./256);
+    vec2 coord=vec2(dp*floor(st.s/dp),dp*floor(st.t/dp));
+    frag_colour = texture(tex,coord)*color;
 }
