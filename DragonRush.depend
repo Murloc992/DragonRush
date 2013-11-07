@@ -1,7 +1,9 @@
 # depslib dependency file v1.0
-1379102644 source:c:\users\andrew\desktop\stuff\coding\dragonrush\src\main.cpp
+1380201712 source:c:\users\andrew\desktop\stuff\coding\dragonrush\src\main.cpp
 	"CShader.h"
 	"CQuad.h"
+	"CRenderer.h"
+	"CCamera.h"
 	<SOIL.h>
 
 1371414845 c:\users\andrew\desktop\stuff\coding\c++ libs\glfw-3.0.1.bin.win32\include\glfw\glfw3.h
@@ -282,28 +284,29 @@
 	<GLFW/glfw3.h>
 	<glm.hpp>
 
-1379030114 source:c:\users\andrew\desktop\stuff\coding\dragonrush\include\precomp.h
+1379262329 source:c:\users\andrew\desktop\stuff\coding\dragonrush\include\precomp.h
 	<stdio.h>
 	<string>
 	<vector>
 	<cstdint>
+	<time.h>
 	<GL/glew.h>
 	<GLFW/glfw3.h>
 	<glm.hpp>
 	<ext.hpp>
-	"util.h"
+	"info.h"
 
-1379096924 source:c:\users\andrew\desktop\stuff\coding\dragonrush\src\cmesh.cpp
+1379176522 source:c:\users\andrew\desktop\stuff\coding\dragonrush\src\cmesh.cpp
 	"CMesh.h"
 	<fstream>
 	<sstream>
 
-1379087100 c:\users\andrew\desktop\stuff\coding\dragonrush\include\cmesh.h
+1379176427 c:\users\andrew\desktop\stuff\coding\dragonrush\include\cmesh.h
 
-1379098662 c:\users\andrew\desktop\stuff\coding\dragonrush\include\cquad.h
+1379176319 c:\users\andrew\desktop\stuff\coding\dragonrush\include\cquad.h
 	"CMesh.h"
 
-1378917696 c:\users\andrew\desktop\stuff\coding\dragonrush\include\util.h
+1379262688 c:\users\andrew\desktop\stuff\coding\dragonrush\include\util.h
 
 1215443608 c:\users\andrew\desktop\stuff\coding\c++ libs\simple opengl image library\src\soil.h
 
@@ -875,4 +878,30 @@
 	"../glm.hpp"
 	"../gtc/matrix_access.hpp"
 	<iostream>
+
+1379269244 source:c:\users\andrew\desktop\stuff\coding\dragonrush\src\ccamera.cpp
+	"CCamera.h"
+	"CRenderer.h"
+	"util.h"
+
+1379268843 c:\users\andrew\desktop\stuff\coding\dragonrush\include\ccamera.h
+
+1379176013 source:c:\users\andrew\desktop\stuff\coding\dragonrush\src\cgameobject.cpp
+	"CMesh.h"
+	"CGameObject.h"
+
+1379176019 c:\users\andrew\desktop\stuff\coding\dragonrush\include\cgameobject.h
+
+1379265738 source:c:\users\andrew\desktop\stuff\coding\dragonrush\src\crenderer.cpp
+	"CCamera.h"
+	"CRenderer.h"
+
+1379195115 c:\users\andrew\desktop\stuff\coding\dragonrush\include\crenderer.h
+
+1379190221 c:\users\andrew\desktop\stuff\coding\dragonrush\include\info.h
+
+1379264652 source:c:\users\andrew\desktop\stuff\coding\dragonrush\src\cinputmanager.cpp
+	"CInputManager.h"
+
+1379264720 c:\users\andrew\desktop\stuff\coding\dragonrush\include\cinputmanager.h
 

@@ -5,6 +5,7 @@
 #include <string>
 #include <vector>
 #include <cstdint>
+#include <time.h>
 
 #define GLEW_STATIC
 #include <GL/glew.h>
@@ -15,6 +16,6 @@
 //ALL stable glm extensions
 #include <ext.hpp>
 
-#include "util.h"
+#include "info.h"
 
 #endif // PRECOMP_H_INCLUDED

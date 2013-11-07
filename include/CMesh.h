@@ -68,7 +68,7 @@ public:
             glm::vec3 a=vertices[ia].pos;
             glm::vec3 b=vertices[ib].pos;
             glm::vec3 c=vertices[ic].pos;
-            glm::vec3 n=glm::normalize(glm::cross(c-a,b-a));
+            glm::vec3 n=glm::normalize(glm::cross(b-c,c-a));
             vertices[ia].norm=n;
             vertices[ib].norm=n;
             vertices[ic].norm=n;
@@ -89,7 +89,7 @@ public:
         glUseProgram(0);
     }
 
-    void loadFromFile(const char* filename);
+    void loadFromPLYFile(const char* filename);
 protected:
     std::vector<SVertex> vertices;
     std::vector<uint32_t> indices;

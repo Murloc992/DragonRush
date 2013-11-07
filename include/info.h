@@ -1,0 +1,9 @@
+#ifndef INFO_H_INCLUDED
+#define INFO_H_INCLUDED
+
+#define PROJECT_NAME "Doge"
+#define PROJECT_VERSION_MINOR 0
+#define PROJECT_VERSION_MAJOR 1
+#define PROJECT_VERSION_STATE "alpha"
+
+#endif // INFO_H_INCLUDED

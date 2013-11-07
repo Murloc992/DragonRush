@@ -17,10 +17,10 @@ public:
 
     void generate()
     {
-        SVertex v0=SVertex().setPos(1,0,1).setUV1(1,1);
-        SVertex v1=SVertex().setPos(-1,0,1).setUV1(0,1);
-        SVertex v2=SVertex().setPos(-1,0,-1).setUV1(0,0);
-        SVertex v3=SVertex().setPos(1,0,-1).setUV1(1,0);
+        SVertex v0=SVertex().setPos(-1,0,1).setUV1(1,1);
+        SVertex v1=SVertex().setPos(1,0,1).setUV1(0,1);
+        SVertex v2=SVertex().setPos(1,0,-1).setUV1(0,0);
+        SVertex v3=SVertex().setPos(-1,0,-1).setUV1(1,0);
         vertices.resize(4);
         vertices={v0,v1,v2,v3};
 

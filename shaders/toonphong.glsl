@@ -65,6 +65,10 @@ PointLight PointLights[3];
 
 vec4 CalcPointLight(PointLight L,vec3 SpecMap)
 {
+    const float A = 0.1;
+    const float B = 0.3;
+    const float C = 0.6;
+    const float D = 1.0;
     // ambient intensity
 	vec3 Ambient = L.Color * L.Ambience;
 
@@ -74,13 +78,15 @@ vec4 CalcPointLight(PointLight L,vec3 SpecMap)
     vec3 direction_to_light_world = normalize (distance_to_light_world);
     float dot_prod = dot (direction_to_light_world,norm_world);
     dot_prod = max (dot_prod, 0.0);
+    if(dot_prod<A) dot_prod = A;
+    else if(dot_prod<B) dot_prod=B;
+    else if(dot_prod<C) dot_prod=C;
+    else dot_prod=D;
     vec3 Diffuse = L.Color * L.Diffusion * dot_prod; // final diffuse intensity
 
     //gimme a specular mapped reflection
     vec3 light_position_eye = vec3 (V * vec4 (L.Position, 1.0));
     vec3 distance_to_light_eye = light_position_eye - pos_eye;
-    float deye=length(distance_to_light_eye);
-    deye=deye;
     vec3 direction_to_light_eye = normalize (distance_to_light_eye);
 
     vec3 reflection_eye = reflect (-direction_to_light_eye, norm_eye);
@@ -88,7 +94,8 @@ vec4 CalcPointLight(PointLight L,vec3 SpecMap)
     float dot_prod_specular = dot (reflection_eye, surface_to_viewer_eye);
     dot_prod_specular = max (dot_prod_specular, 0.0);
     float specular_factor = pow (dot_prod_specular, L.specexp);
-    vec3 Specular = L.Specularity * SpecMap * specular_factor;//*1./deye; // final specular intensity
+    specular_factor = smoothstep(0.4,0.6,specular_factor);
+    vec3 Specular = L.Specularity * SpecMap * specular_factor; // final specular intensity
 
     //attenuation
     float dist=length(distance_to_light_world);
@@ -101,34 +108,34 @@ out vec4 frag_colour;
 vec4 TotalLight=vec4(0);
 void main () {
     PointLights[0].Color = vec3(0.75,0.5,0.0);
-    PointLights[0].Diffusion = vec3(0.0);
+    PointLights[0].Diffusion = vec3(0.7);
     PointLights[0].Ambience = vec3(0);
     PointLights[0].Specularity = vec3(1);
-    PointLights[0].Position = vec3(0.0,1.0,0.0);
-    PointLights[0].Power=10;
-    PointLights[0].specexp=100.0;
+    PointLights[0].Position = vec3(0.0,4.0,0.0);
+    PointLights[0].Power=10.0;
+    PointLights[0].specexp=10.0;
 
-    PointLights[1].Color = vec3(0.7,0.0,0.7);
+    PointLights[1].Color = vec3(0.7,0.7,0.7);
     PointLights[1].Diffusion = vec3(0.0);
     PointLights[1].Ambience = vec3(0);
     PointLights[1].Specularity = vec3(1);
     PointLights[1].Position = vec3(0.0,4.0,4.0);
     PointLights[1].Power=10.0;
-    PointLights[1].specexp=1.0;
+    PointLights[1].specexp=10.0;
 
-    PointLights[2].Color = vec3(0.0,0.7,0.7);
+    PointLights[2].Color = vec3(0.7,0.7,0.7);
     PointLights[2].Diffusion = vec3(0.0);
     PointLights[2].Ambience = vec3(0);
     PointLights[2].Specularity = vec3(1);
     PointLights[2].Position = vec3(0.0,4.0,-4.0);
     PointLights[2].Power=10.0;
-    PointLights[2].specexp=1.0;
+    PointLights[2].specexp=10.0;
 
     for(int i=0; i<3; i++)
     {
         TotalLight+=CalcPointLight(PointLights[i],texture(tex_spec,st).rgb);
     }
 
-    frag_colour = TotalLight*texture (tex,st);
+    frag_colour = TotalLight*texture(tex,st);
 }
 

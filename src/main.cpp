@@ -1,43 +1,14 @@
 #include "CShader.h"
 #include "CQuad.h"
+#include "CRenderer.h"
+#include "CCamera.h"
 
 #include <SOIL.h>
 
 
 int main ()
 {
-    // start GL context and O/S window using the GLFW helper library
-    if (!glfwInit ())
-    {
-        fprintf (stderr, "ERROR: could not start GLFW3\n");
-        return 1;
-    }
-    GLFWwindow* window = glfwCreateWindow (800, 600, "Hello Triangle", NULL, NULL);
-    if (!window)
-    {
-        fprintf (stderr, "ERROR: could not open window with GLFW3\n");
-        glfwTerminate();
-        return 1;
-    }
-    glfwMakeContextCurrent (window);
-
-    // start GLEW extension handler
-    glewInit ();
-
-    // get version info
-    const GLubyte* renderer = glGetString (GL_RENDERER); // get renderer string
-    const GLubyte* version = glGetString (GL_VERSION); // version as a string
-    printf ("Renderer: %s\n", renderer);
-    printf ("OpenGL version supported %s\n", version);
-
-    // tell GL to only draw onto a pixel if the shape is closer to the viewer
-    glEnable(GL_TEXTURE_2D);
-    glEnable (GL_DEPTH_TEST); // enable depth-testing
-    glDepthFunc (GL_LEQUAL); // depth-testing interprets a smaller value as "closer"
-    glFrontFace(GL_CCW);
-    glCullFace(GL_BACK);
-    glEnable(GL_BLEND);
-    glBlendFunc(GL_SRC_ALPHA,GL_ONE_MINUS_SRC_ALPHA);
+    CRenderer* renderer=new CRenderer(glm::vec2(1280,720));
 
     CQuad quad=CQuad();
     quad.generate();
@@ -67,94 +38,55 @@ int main ()
     if(tex2d==0||spec==0)
         return -1;
 
-    glm::mat4 M,V,P,MVP;
+    glm::mat4 M,MVP;
 
     M=glm::mat4(1);
-    V=glm::lookAt(glm::vec3(1,2,1),
-                  glm::vec3(0,0,0),
-                  glm::vec3(0,1,0));
-    P=glm::perspective(67.f,4.f/3.f,0.1f,1000.f);
-
-    float zpos=0.1;
-    float xpos=0.1;
-    float ypos=5.f;
 
     double fpstracker=glfwGetTime();
     int fps=0;
 
     CMesh* mesh=new CMesh();
 
-    mesh->loadFromFile("feisar.ply");
+    mesh->loadFromPLYFile("feisar.ply");
 
     uint32_t ftex=SOIL_load_OGL_texture("diffuse.bmp",SOIL_LOAD_AUTO, SOIL_CREATE_NEW_ID, SOIL_FLAG_MIPMAPS | SOIL_FLAG_INVERT_Y);
     uint32_t stex=SOIL_load_OGL_texture("specular.bmp",SOIL_LOAD_AUTO, SOIL_CREATE_NEW_ID, SOIL_FLAG_MIPMAPS | SOIL_FLAG_INVERT_Y);
 
     CMesh* sphere=new CMesh();
-    sphere->loadFromFile("sphere.ply");
-    while (!glfwWindowShouldClose (window) && !glfwGetKey(window,GLFW_KEY_ESCAPE)==GL_TRUE)
+    sphere->loadFromPLYFile("sphere.ply");
+
+    CCamera* cam=new CCamera(renderer,glm::vec3(0,2,5),glm::vec3(0,2,0),glm::vec3(0,1,0),true);
+    while (!glfwWindowShouldClose (renderer->getWindow()) && !glfwGetKey(renderer->getWindow(),GLFW_KEY_ESCAPE)==GL_TRUE)
     {
         static double previous_seconds = glfwGetTime ();
         double current_seconds = glfwGetTime ();
         double elapsed_seconds = current_seconds - previous_seconds;
         previous_seconds = current_seconds;
 
-        if(glfwGetKey(window,GLFW_KEY_W)==GLFW_PRESS)
-        {
-            zpos-=1.f*elapsed_seconds;
-            xpos-=1.f*elapsed_seconds;
-        }
-        else if(glfwGetKey(window,GLFW_KEY_S)==GLFW_PRESS)
-        {
-            zpos+=1.f*elapsed_seconds;
-            xpos+=1.f*elapsed_seconds;
-        }
-        else if(glfwGetKey(window,GLFW_KEY_A)==GLFW_PRESS)
-        {
-            zpos+=1.f*elapsed_seconds;
-            xpos-=1.f*elapsed_seconds;
-        }
-        else if(glfwGetKey(window,GLFW_KEY_D)==GLFW_PRESS)
-        {
-            zpos-=1.f*elapsed_seconds;
-            xpos+=1.f*elapsed_seconds;
-        }
-        else if(glfwGetKey(window,GLFW_KEY_LEFT_SHIFT)==GLFW_PRESS)
-        {
-            ypos-=1.f*elapsed_seconds;
-        }
-        else if(glfwGetKey(window,GLFW_KEY_SPACE)==GLFW_PRESS)
-        {
-            ypos+=1.f*elapsed_seconds;
-        }
-        else if(glfwGetKey(window,GLFW_KEY_R)==GLFW_PRESS)
-        {
-            ypos=5.f;
-        }
+        cam->update(elapsed_seconds);
 
-        V=glm::lookAt(glm::vec3(xpos,ypos,zpos),
-                  glm::vec3(xpos-0.5,1,zpos-0.5),
-                  glm::vec3(0,1,0));
+        // wipe the drawing surface clear
+        glClear (GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+
         glActiveTexture(GL_TEXTURE0);
         glBindTexture(GL_TEXTURE_2D,tex2d);
         glActiveTexture(GL_TEXTURE1);
         glBindTexture(GL_TEXTURE_2D,spec);
-        // wipe the drawing surface clear
-        glClear (GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-        for(int32_t z=-3; z<3; z++)
-            for(int32_t x=-3; x<3; x++)
+        for(int32_t z=-6; z<6; z++)
+            for(int32_t x=-6; x<6; x++)
             {
                 M=glm::mat4(1.0f);
                 M=glm::translate(M,glm::vec3(x*2,0,z*2));
                 //MVP=P*V*M;
                 quad.shader->setUniformMat4("M",M);
-                quad.shader->setUniformMat4("V",V);
-                quad.shader->setUniformMat4("P",P);
+                quad.shader->setUniformMat4("V",cam->getView());
+                quad.shader->setUniformMat4("P",renderer->getPerspective());
                 quad.draw();
             }
         M=glm::mat4(1.0f);
         quad.shader->setUniformMat4("M",M);
-        quad.shader->setUniformMat4("V",V);
-        quad.shader->setUniformMat4("P",P);
+        quad.shader->setUniformMat4("V",cam->getView());
+        quad.shader->setUniformMat4("P",renderer->getPerspective());
         glActiveTexture(GL_TEXTURE0);
         glBindTexture(GL_TEXTURE_2D,ftex);
         glActiveTexture(GL_TEXTURE1);
@@ -164,15 +96,38 @@ int main ()
         M=glm::mat4(1.0f);
         M=glm::translate(M,glm::vec3(0,1,0));
         quad.shader->setUniformMat4("M",M);
-        quad.shader->setUniformMat4("V",V);
-        quad.shader->setUniformMat4("P",P);
+        quad.shader->setUniformMat4("V",cam->getView());
+        quad.shader->setUniformMat4("P",renderer->getPerspective());
         glActiveTexture(GL_TEXTURE0);
         glBindTexture(GL_TEXTURE_2D,0);
         glActiveTexture(GL_TEXTURE1);
         glBindTexture(GL_TEXTURE_2D,0);
         sphere->draw(quad.shader->id);
+
+        M=glm::mat4(1.0f);
+        M=glm::translate(M,glm::vec3(0,4,4));
+        quad.shader->setUniformMat4("M",M);
+        quad.shader->setUniformMat4("V",cam->getView());
+        quad.shader->setUniformMat4("P",renderer->getPerspective());
+        glActiveTexture(GL_TEXTURE0);
+        glBindTexture(GL_TEXTURE_2D,0);
+        glActiveTexture(GL_TEXTURE1);
+        glBindTexture(GL_TEXTURE_2D,0);
+        sphere->draw(quad.shader->id);
+
+        M=glm::mat4(1.0f);
+        M=glm::translate(M,glm::vec3(0,4,-4));
+        quad.shader->setUniformMat4("M",M);
+        quad.shader->setUniformMat4("V",cam->getView());
+        quad.shader->setUniformMat4("P",renderer->getPerspective());
+        glActiveTexture(GL_TEXTURE0);
+        glBindTexture(GL_TEXTURE_2D,0);
+        glActiveTexture(GL_TEXTURE1);
+        glBindTexture(GL_TEXTURE_2D,0);
+        sphere->draw(quad.shader->id);
+        glfwPollEvents();
         // put the stuff we've been drawing onto the display
-        glfwSwapBuffers (window);
+        glfwSwapBuffers (renderer->getWindow());
         fps++;
         if(glfwGetTime()-fpstracker>=1.0)
         {
@@ -180,8 +135,6 @@ int main ()
             fps=0;
             fpstracker=glfwGetTime();
         }
-        // update other events like input handling
-        glfwPollEvents ();
     }
 
     // close GL context and any other GLFW resources

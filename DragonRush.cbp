@@ -49,10 +49,15 @@
 			<Add directory="$(#glew.lib)" />
 			<Add directory="$(#soil.lib)" />
 		</Linker>
+		<Unit filename="include/CCamera.h" />
 		<Unit filename="include/CCube.h" />
+		<Unit filename="include/CGameObject.h" />
+		<Unit filename="include/CInputManager.h" />
 		<Unit filename="include/CMesh.h" />
 		<Unit filename="include/CQuad.h" />
+		<Unit filename="include/CRenderer.h" />
 		<Unit filename="include/CShader.h" />
+		<Unit filename="include/info.h" />
 		<Unit filename="include/precomp.h">
 			<Option compile="1" />
 			<Option weight="0" />
@@ -67,8 +72,15 @@
 		<Unit filename="shaders/phong.glsl">
 			<Option virtualFolder="Shaders/" />
 		</Unit>
+		<Unit filename="shaders/toonphong.glsl">
+			<Option virtualFolder="Shaders/" />
+		</Unit>
+		<Unit filename="src/CCamera.cpp" />
 		<Unit filename="src/CCube.cpp" />
+		<Unit filename="src/CGameObject.cpp" />
+		<Unit filename="src/CInputManager.cpp" />
 		<Unit filename="src/CMesh.cpp" />
+		<Unit filename="src/CRenderer.cpp" />
 		<Unit filename="src/CShader.cpp" />
 		<Unit filename="src/main.cpp" />
 		<Extensions>

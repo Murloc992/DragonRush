@@ -4,7 +4,7 @@
 
 using namespace std;
 
-void CMesh::loadFromFile(const char* filename)
+void CMesh::loadFromPLYFile(const char* filename)
 {
     FILE* file=fopen(filename,"r");
     if (file==NULL)
@@ -66,6 +66,5 @@ void CMesh::loadFromFile(const char* filename)
             /* ignoring this line */
         }
     }
-
     createBuffers();
 }
