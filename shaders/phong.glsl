@@ -100,24 +100,24 @@ vec4 CalcPointLight(PointLight L,vec3 SpecMap)
 out vec4 frag_colour;
 vec4 TotalLight=vec4(0);
 void main () {
-    PointLights[0].Color = vec3(0.75,0.5,0.0);
-    PointLights[0].Diffusion = vec3(0.0);
+    PointLights[0].Color = vec3(0.75,0.0,0.0);
+    PointLights[0].Diffusion = vec3(1.0);
     PointLights[0].Ambience = vec3(0);
     PointLights[0].Specularity = vec3(1);
     PointLights[0].Position = vec3(0.0,1.0,0.0);
     PointLights[0].Power=10;
     PointLights[0].specexp=100.0;
 
-    PointLights[1].Color = vec3(0.7,0.0,0.7);
-    PointLights[1].Diffusion = vec3(0.0);
+    PointLights[1].Color = vec3(0.0,0.75,0.0);
+    PointLights[1].Diffusion = vec3(1.0);
     PointLights[1].Ambience = vec3(0);
     PointLights[1].Specularity = vec3(1);
     PointLights[1].Position = vec3(0.0,4.0,4.0);
     PointLights[1].Power=10.0;
     PointLights[1].specexp=1.0;
 
-    PointLights[2].Color = vec3(0.0,0.7,0.7);
-    PointLights[2].Diffusion = vec3(0.0);
+    PointLights[2].Color = vec3(0.0,0.0,0.75);
+    PointLights[2].Diffusion = vec3(1.0);
     PointLights[2].Ambience = vec3(0);
     PointLights[2].Specularity = vec3(1);
     PointLights[2].Position = vec3(0.0,4.0,-4.0);
