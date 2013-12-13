@@ -11,7 +11,6 @@ public:
 
     CQuad()
     {
-        CMesh();
         shader=new CShader("shaders/phong.glsl");
     }
 

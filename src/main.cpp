@@ -2,6 +2,7 @@
 #include "CQuad.h"
 #include "CRenderer.h"
 #include "CCamera.h"
+#include "AABB.h"
 
 #include <SOIL.h>
 
@@ -56,6 +57,9 @@ int main ()
     sphere->loadFromPLYFile("sphere.ply");
 
     CCamera* cam=new CCamera(renderer,glm::vec3(0,2,5),glm::vec3(0,2,0),glm::vec3(0,1,0),true);
+
+    AABB* bb=new AABB(mesh->getVertices());
+
     while (!glfwWindowShouldClose (renderer->getWindow()) && !glfwGetKey(renderer->getWindow(),GLFW_KEY_ESCAPE)==GL_TRUE)
     {
         static double previous_seconds = glfwGetTime ();

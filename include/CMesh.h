@@ -48,16 +48,13 @@ public:
     glm::vec4 col;
 };
 
-enum
-{
-};
-
 class CMesh
 {
 private:
 public:
     CMesh(){};
     ~CMesh(){};
+
     void calculateNormals()
     {
         for(uint32_t i=0; i<indices.size(); i+=3)
@@ -76,7 +73,7 @@ public:
         }
     }
 
-    void draw(uint32_t shader)
+    virtual void draw(uint32_t shader)
     {
         glUseProgram(shader);
         glBindVertexArray(VAO);
@@ -89,7 +86,14 @@ public:
         glUseProgram(0);
     }
 
+    virtual void generate(){};
+
     void loadFromPLYFile(const char* filename);
+
+    std::vector<SVertex> getVertices()
+    {
+        return vertices;
+    }
 protected:
     std::vector<SVertex> vertices;
     std::vector<uint32_t> indices;
